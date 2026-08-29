@@ -106,6 +106,6 @@ class AuditLog(Base):
     user_id = Column(String(36), ForeignKey("users.id", ondelete="SET NULL"), nullable=True)
     action = Column(String(100), nullable=False)  # e.g., document_uploaded, document_deleted, role_updated
     metadata_json = Column(JSON, default=dict, nullable=False)
-    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc), nullable=False)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc).replace(tzinfo=None), nullable=False)
 
     user = relationship("User", back_populates="audit_logs")
