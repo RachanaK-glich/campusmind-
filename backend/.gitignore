@@ -1,0 +1,11 @@
+# Backend specific ignore
+__pycache__/
+*.pyc
+venv/
+.venv/
+.env
+campusmind.db
+campusmind.db-journal
+qdrant_data/
+uploads/
+.pytest_cache/
